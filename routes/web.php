@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\GPTController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
@@ -16,9 +17,8 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Index');
-});
+Route::get('/', [GPTController::class, 'show']);
+Route::post('/', [GPTController::class, 'evaluatePrompt']);
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
