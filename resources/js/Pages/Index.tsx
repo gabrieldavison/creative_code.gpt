@@ -23,6 +23,7 @@ export default function Index({ initialPromptValue, initialCodeValue }: Props) {
     const submit = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
         if (data.prompt !== "") post("/");
     };
+
     const evalCode = (code: string) => {
         // This is a bit of a hack but seems to hold up, if anyone knows a better way then please let me know.
         eval(code);
